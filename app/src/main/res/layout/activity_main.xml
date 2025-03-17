@@ -14,11 +14,15 @@
         android:textSize="25sp"
         android:textStyle="bold"/>
 
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="560dp"/>
+
     <Button
+        android:id="@+id/WelcomeBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LogIn To Donate"
-        android:id="@+id/WelcomeBTN"/>
+        android:text="LogIn To Donate" />
 
 
 </LinearLayout>
