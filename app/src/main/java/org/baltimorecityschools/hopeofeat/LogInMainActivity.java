@@ -1,6 +1,9 @@
 package org.baltimorecityschools.hopeofeat;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +13,38 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class LogInMainActivity extends AppCompatActivity {
 
+    EditText NameET;
+    EditText LastNET;
+    EditText EmailEt;
+    EditText PasswordET;
+
+    Button FinishWithYourInBTN;
+    Button MakeYourDBTN;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_log_in_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        NameET = (EditText)findViewById(R.id.NameET);
+        LastNET = (EditText)findViewById(R.id.LastNET);
+        EmailEt = (EditText)findViewById(R.id.EmailET);
+        PasswordET = (EditText)findViewById(R.id.PasswordBTN);
+
+        FinishWithYourInBTN = (Button)findViewById(R.id.FinishWithInBTN);
+        MakeYourDBTN = (Button)findViewById(R.id.MakeYDBTN);
+
+
+        FinishWithYourInBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FinishWithYourInBTN.setVisibility(View.GONE);
+
+
+            }
+
         });
+
+
     }
 }

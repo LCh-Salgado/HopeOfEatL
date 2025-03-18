@@ -3,32 +3,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@drawable/dona_box"
     android:gravity="center"
-    android:background="@drawable/d_p"
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/NameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Name:"
-        android:textStyle="bold"
-        android:textSize="25sp"
         android:textColor="@color/black"
-        android:id="@+id/NameET" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/LastNET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:textColor="@color/black"
         android:hint="LastName:"
-        />
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/EmailET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Email:"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/PasswordBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Password:"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -36,11 +46,19 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="95dp"/>
+        android:layout_height="200dp" />
 
     <Button
+        android:id="@+id/FinishWithInBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Make Your Donation."/>
+        android:text="Finish"/>
+
+
+    <Button
+        android:id="@+id/MakeYDBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make Your List Of Donation." />
 
 </LinearLayout>

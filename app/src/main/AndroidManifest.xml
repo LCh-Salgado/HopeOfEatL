@@ -13,6 +13,12 @@
         android:theme="@style/Theme.HopeOfEat"
         tools:targetApi="31">
         <activity
+            android:name=".ListDonationMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GoogleMMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".LogInMainActivity"
             android:exported="false" />
         <activity
