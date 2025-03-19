@@ -1,5 +1,6 @@
 package org.baltimorecityschools.hopeofeat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     Button welcomeSBTN;
+    Intent nextScreenIntent;
 
 
     @Override
@@ -24,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
         welcomeSBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            nextScreenIntent = new Intent(MainActivity.this, LogInMainActivity.class);
+            startActivity(nextScreenIntent);
             }
         });
+
+        
     }
 }

@@ -16,7 +16,7 @@
 
     <Space
         android:layout_width="0dp"
-        android:layout_height="560dp"/>
+        android:layout_height="400dp"/>   4 yy
 
     <Button
         android:id="@+id/WelcomeBTN"

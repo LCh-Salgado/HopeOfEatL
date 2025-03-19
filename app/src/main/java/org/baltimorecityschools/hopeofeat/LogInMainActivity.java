@@ -1,5 +1,6 @@
 package org.baltimorecityschools.hopeofeat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,8 @@ public class LogInMainActivity extends AppCompatActivity {
     Button FinishWithYourInBTN;
     Button MakeYourDBTN;
 
+    Intent listOfDIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +42,8 @@ public class LogInMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FinishWithYourInBTN.setVisibility(View.GONE);
-
-
+                listOfDIntent = new Intent(LogInMainActivity.this, ListDonationMainActivity.class);
+                startActivity(listOfDIntent);
             }
 
         });
