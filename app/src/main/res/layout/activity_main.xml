@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome This Is A Donation Place!"
+        android:text="@string/welcome_screen"
         android:textSize="25sp"
         android:textStyle="bold"/>
 
@@ -22,6 +22,6 @@
         android:id="@+id/WelcomeBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LogIn To Donate" />
+        android:text="@string/log_in"/>
 
 </LinearLayout>

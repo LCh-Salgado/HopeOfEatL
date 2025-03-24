@@ -52,12 +52,12 @@
         android:id="@+id/FinishWithInBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Finish"/>
+        android:text="@string/finish_info"/>
 
     <Button
         android:id="@+id/MakeYDBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Make Your List Of Donation." />
+        android:text="@string/list_ofdonation"/>
 
 </LinearLayout>

@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">HopeOfEat</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="welcome_screen">Welcome This Is A Donation Place!</string>
+    <string name="log_in">LogIn To Donate</string>
+    <string name="finish_info">Finish</string>
+    <string name="list_ofdonation">Make Your List Of Donation.</string>
+    <string name="enter_list">Enter</string>
+    <string name="see_location">See location to donate</string>
+    <string name="list_places">List Of Places</string>
+
+
 </resources>
