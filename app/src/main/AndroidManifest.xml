@@ -38,7 +38,7 @@
         <activity
             android:name=".ListDonationMainActivity"
             android:exported="false" />
-        
+
         <activity
             android:name=".LogInMainActivity"
             android:exported="false" />
