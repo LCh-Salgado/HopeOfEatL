@@ -32,20 +32,13 @@
 
         <activity
             android:name=".MapsActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/title_activity_maps">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ListDonationMainActivity"
             android:exported="false" />
-        <activity
-            android:name=".GoogleMMainActivity"
-            android:exported="false" />
+        
         <activity
             android:name=".LogInMainActivity"
             android:exported="false" />

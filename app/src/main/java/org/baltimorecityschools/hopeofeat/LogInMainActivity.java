@@ -22,7 +22,7 @@ public class LogInMainActivity extends AppCompatActivity {
     Button FinishWithYourInBTN;
     Button MakeYourDBTN;
 
-    Intent listOfDIntent;
+    Intent makeYourDIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +38,12 @@ public class LogInMainActivity extends AppCompatActivity {
         MakeYourDBTN = (Button)findViewById(R.id.MakeYDBTN);
 
 
-        FinishWithYourInBTN.setOnClickListener(new View.OnClickListener() {
+        MakeYourDBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FinishWithYourInBTN.setVisibility(View.GONE);
-                listOfDIntent = new Intent(LogInMainActivity.this, ListDonationMainActivity.class);
-                startActivity(listOfDIntent);
+                MakeYourDBTN.setVisibility(View.GONE);
+                makeYourDIntent = new Intent(LogInMainActivity.this, ListDonationMainActivity.class);
+                startActivity(makeYourDIntent);
             }
 
         });
