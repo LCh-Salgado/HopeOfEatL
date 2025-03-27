@@ -9,14 +9,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/your_list"
+        android:text="@string/list_ofdonation"
         android:textSize="25sp"
         android:textStyle="bold"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="YourList"
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listitem"
         android:textSize="25sp"
         android:textStyle="bold"/>
 

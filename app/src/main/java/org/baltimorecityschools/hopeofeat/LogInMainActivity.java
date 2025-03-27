@@ -3,10 +3,12 @@ package org.baltimorecityschools.hopeofeat;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,6 +26,9 @@ public class LogInMainActivity extends AppCompatActivity {
 
     Intent makeYourDIntent;
 
+    ListView donationListView;
+    String[] donations = {"Donation 1", "Donation 2", "Donation 3"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,10 @@ public class LogInMainActivity extends AppCompatActivity {
 
         FinishWithYourInBTN = (Button)findViewById(R.id.FinishWithInBTN);
         MakeYourDBTN = (Button)findViewById(R.id.MakeYDBTN);
+
+        donationListView = (ListView)findViewById(R.id.listitem);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, donations);
+        donationListView.setAdapter(adapter);
 
 
         MakeYourDBTN.setOnClickListener(new View.OnClickListener() {
