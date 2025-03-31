@@ -16,18 +16,16 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class LogInMainActivity extends AppCompatActivity {
 
-    EditText NameET;
-    EditText LastNET;
-    EditText EmailEt;
-    EditText PasswordET;
+    private EditText NameET;
+    private EditText LastNET;
+    private EditText EmailEt;
+    private EditText PasswordET;
 
-    Button FinishWithYourInBTN;
-    Button MakeYourDBTN;
+    private Button FinishWithYourInBTN;
+    private Button MakeYourDBTN;
 
     Intent makeYourDIntent;
 
-    ListView donationListView;
-    String[] donations = {"Donation 1", "Donation 2", "Donation 3"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +40,6 @@ public class LogInMainActivity extends AppCompatActivity {
         FinishWithYourInBTN = (Button)findViewById(R.id.FinishWithInBTN);
         MakeYourDBTN = (Button)findViewById(R.id.MakeYDBTN);
 
-        donationListView = (ListView)findViewById(R.id.listitem);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, donations);
-        donationListView.setAdapter(adapter);
-
 
         MakeYourDBTN.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +49,14 @@ public class LogInMainActivity extends AppCompatActivity {
                 startActivity(makeYourDIntent);
             }
 
+        });
+        FinishWithYourInBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            String inputName = NameET.getText().toString();
+            String inputPassword = PasswordET.getText().toString();
+
+            }
         });
 
 
