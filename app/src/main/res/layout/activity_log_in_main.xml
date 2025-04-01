@@ -1,63 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="@drawable/dona_box"
+    android:background="@drawable/login_background"
     android:gravity="center"
-    android:orientation="vertical">
+    android:padding="16dp"
+    tools:context=".LogInMainActivity">
 
-    <EditText
-        android:id="@+id/NameET"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name:"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/LastNET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="LastName:"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/EmailET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Email:"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/icon_account_circle"/>
 
-    <EditText
-        android:id="@+id/PasswordBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Password:"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        />
+        <EditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email:"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="18dp"
+            android:inputType="text"
+            android:layout_marginTop="32dp"
+            />
 
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="200dp" />
+        <EditText
+            android:id="@+id/passwET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password:"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="18dp"
+            android:inputType="textPassword"
+            android:layout_marginTop="16dp"
+            />
 
-    <Button
-        android:id="@+id/FinishWithInBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/finish_info"/>
+        <Button
+            android:id="@+id/loginBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_info"/>
 
-    <Button
-        android:id="@+id/MakeYDBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/list_ofdonation"/>
+        <Button
+            android:id="@+id/MakeYDBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_ofdonation"/>
 
-</LinearLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/NameET"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Name:"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/LastNET"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="LastName:"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/EmailET"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Email:"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/PasswordBTN"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Password:"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textStyle="bold"-->
+<!--        />-->
+
+<!--    <Space-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="200dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/FinishWithInBTN"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/finish_info"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/MakeYDBTN"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/list_ofdonation"/>-->
+
+</RelativeLayout>

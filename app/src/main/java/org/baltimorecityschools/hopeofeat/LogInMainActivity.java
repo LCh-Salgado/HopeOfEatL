@@ -16,13 +16,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class LogInMainActivity extends AppCompatActivity {
 
-    private EditText NameET;
-    private EditText LastNET;
-    private EditText EmailEt;
-    private EditText PasswordET;
-
-    private Button FinishWithYourInBTN;
-    private Button MakeYourDBTN;
+    EditText email;
+    EditText passw;
+    Button loginB;
+    Button makeYourLB;
 
     Intent makeYourDIntent;
 
@@ -32,32 +29,22 @@ public class LogInMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in_main);
 
-        NameET = (EditText)findViewById(R.id.NameET);
-        LastNET = (EditText)findViewById(R.id.LastNET);
-        EmailEt = (EditText)findViewById(R.id.EmailET);
-        PasswordET = (EditText)findViewById(R.id.PasswordBTN);
+        email = (EditText)findViewById(R.id.emailET);
+        passw = (EditText)findViewById(R.id.passwET);
 
-        FinishWithYourInBTN = (Button)findViewById(R.id.FinishWithInBTN);
-        MakeYourDBTN = (Button)findViewById(R.id.MakeYDBTN);
+        loginB = (Button)findViewById(R.id.loginBTN);
+        makeYourLB = (Button)findViewById(R.id.MakeYDBTN);
 
 
-        MakeYourDBTN.setOnClickListener(new View.OnClickListener() {
+        makeYourLB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MakeYourDBTN.setVisibility(View.GONE);
                 makeYourDIntent = new Intent(LogInMainActivity.this, ListDonationMainActivity.class);
                 startActivity(makeYourDIntent);
             }
 
         });
-        FinishWithYourInBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            String inputName = NameET.getText().toString();
-            String inputPassword = PasswordET.getText().toString();
-
-            }
-        });
+        
 
 
     }
