@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +23,9 @@ public class LogInMainActivity extends AppCompatActivity {
     EditText passw;
     Button loginB;
     Button makeYourLB;
+    ImageView iconLogI;
 
     Intent makeYourDIntent;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class LogInMainActivity extends AppCompatActivity {
         email = (EditText)findViewById(R.id.emailET);
         passw = (EditText)findViewById(R.id.passwET);
 
+
         loginB = (Button)findViewById(R.id.loginBTN);
         makeYourLB = (Button)findViewById(R.id.MakeYDBTN);
 
@@ -40,6 +43,10 @@ public class LogInMainActivity extends AppCompatActivity {
         makeYourLB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                iconLogI.setVisibility(View.VISIBLE);
+                email.setVisibility(View.GONE);
+                passw.setVisibility(View.GONE);
+                loginB.setVisibility(View.GONE);
                 makeYourDIntent = new Intent(LogInMainActivity.this, ListDonationMainActivity.class);
                 startActivity(makeYourDIntent);
             }
