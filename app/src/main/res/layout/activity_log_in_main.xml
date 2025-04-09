@@ -20,6 +20,7 @@
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
+            android:id="@+id/iconI"
             android:src="@drawable/icon_account_circle"/>
 
         <EditText

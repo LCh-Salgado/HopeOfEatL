@@ -23,7 +23,8 @@ public class LogInMainActivity extends AppCompatActivity {
     EditText passw;
     Button loginB;
     Button makeYourLB;
-    ImageView iconLogI;
+
+   ImageView iconLogI;
 
     Intent makeYourDIntent;
 
@@ -35,6 +36,8 @@ public class LogInMainActivity extends AppCompatActivity {
         email = (EditText)findViewById(R.id.emailET);
         passw = (EditText)findViewById(R.id.passwET);
 
+        iconLogI = (ImageView)findViewById(R.id.iconI);
+
 
         loginB = (Button)findViewById(R.id.loginBTN);
         makeYourLB = (Button)findViewById(R.id.MakeYDBTN);
@@ -43,14 +46,20 @@ public class LogInMainActivity extends AppCompatActivity {
         makeYourLB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iconLogI.setVisibility(View.VISIBLE);
-                email.setVisibility(View.GONE);
-                passw.setVisibility(View.GONE);
-                loginB.setVisibility(View.GONE);
                 makeYourDIntent = new Intent(LogInMainActivity.this, ListDonationMainActivity.class);
                 startActivity(makeYourDIntent);
             }
 
+        });
+        loginB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iconLogI.setVisibility(View.GONE);
+                email.setVisibility(View.GONE);
+                passw.setVisibility(View.GONE);
+                loginB.setVisibility(View.GONE);
+
+            }
         });
         
 
