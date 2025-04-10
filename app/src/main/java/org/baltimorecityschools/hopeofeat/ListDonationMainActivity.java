@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -26,8 +27,9 @@ public class ListDonationMainActivity extends AppCompatActivity {
 
     private ListView mListV;
 
-
-
+    EditText yourFoodEt;
+    Button enterBTN;
+    String items;
 
 //    Button seeLocationDBTN;
 //    Button listPlacesBTN;
@@ -42,33 +44,51 @@ public class ListDonationMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_donation_main);
+        mListV = (ListView)findViewById(R.id.listitem);
+        yourFoodEt = (EditText)findViewById(R.id.yourF);
+        enterBTN = (Button)findViewById(R.id.enterB);
 
-        if(mListV == null) {
-            mListV = (ListView)findViewById(R.id.listitem);
-        }
-        adapter=new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,
-                listItems);
-        setListAdapter(adapter);
+        listItems.add("Oranges");
+        listItems.add("Rice");
+        listItems.add("Milk");
+        listItems.add("Coffe");
+        adapter = new ArrayAdapter<String>(this, R.layout.activity_list_view, R.id.textView, listItems);
+        mListV.setAdapter(adapter);
+
+        enterBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            items = yourFoodEt.getText().toString();
+
+            }
+        });
+
+//        if(mListV == null) {
+//            mListV = (ListView)findViewById(R.id.listitem);
+//        }
+//        adapter=new ArrayAdapter<String>(this,
+//                android.R.layout.simple_list_item_1,
+//                listItems);
+//        setListAdapter(adapter);
 
     }
-    protected ListView getListView() {
-        if (mListV == null) {
-            mListV = (ListView) findViewById(R.id.listitem);
-        }
-        return mListV;
-    }
-    protected void setListAdapter(ListAdapter adapter) {
-        getListView().setAdapter(adapter);
-    }
-    protected ListAdapter getListAdapter() {
-        ListAdapter adapter = getListView().getAdapter();
-        if(adapter instanceof HeaderViewListAdapter) {
-            return ((HeaderViewListAdapter) adapter).getWrappedAdapter();
-        }else {
-            return adapter;
-        }
-    }
+//    protected ListView getListView() {
+//        if (mListV == null) {
+//            mListV = (ListView) findViewById(R.id.listitem);
+//        }
+//        return mListV;
+//    }
+//    protected void setListAdapter(ListAdapter adapter) {
+//        getListView().setAdapter(adapter);
+//    }
+//    protected ListAdapter getListAdapter() {
+//        ListAdapter adapter = getListView().getAdapter();
+//        if(adapter instanceof HeaderViewListAdapter) {
+//            return ((HeaderViewListAdapter) adapter).getWrappedAdapter();
+//        }else {
+//            return adapter;
+//        }
+//    }
 
 }
 //        seeLocationDBTN = (Button)findViewById(R.id.SeeLoBTN);
