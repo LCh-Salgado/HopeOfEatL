@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,13 +23,14 @@ import java.util.ArrayList;
 public class ListDonationMainActivity extends AppCompatActivity {
 
 
-    ArrayList<String> listItems=new ArrayList<String>();
+    ArrayList<String> listItems;
     ArrayAdapter<String> adapter;
 
-    private ListView mListV;
+    ListView mListV;
 
     EditText yourFoodEt;
-    Button enterBTN;
+    Button addBTN;
+    Button removeBTN;
     String items;
 
 //    Button seeLocationDBTN;
@@ -46,22 +48,55 @@ public class ListDonationMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_donation_main);
         mListV = (ListView)findViewById(R.id.listitem);
         yourFoodEt = (EditText)findViewById(R.id.yourF);
-        enterBTN = (Button)findViewById(R.id.enterB);
+        addBTN = (Button)findViewById(R.id.addB);
+        removeBTN = (Button)findViewById(R.id.removeB);
 
-        listItems.add("Oranges");
-        listItems.add("Rice");
-        listItems.add("Milk");
-        listItems.add("Coffe");
+        listItems = new ArrayList<String>();
+
+//        listItems.add("Oranges");
+//        listItems.add("Rice");
+//        listItems.add("Milk");
+//        listItems.add("Coffe");
         adapter = new ArrayAdapter<String>(this, R.layout.activity_list_view, R.id.textView, listItems);
         mListV.setAdapter(adapter);
 
-        enterBTN.setOnClickListener(new View.OnClickListener() {
+        addBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             items = yourFoodEt.getText().toString();
 
+            listItems.add(items);
+            mListV.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+
             }
         });
+        removeBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(int i=0; i<listItems.size(); i++) {
+                    String addItem = yourFoodEt.getText().toString();
+                    if (listItems.get(i).equals(addItem)) {
+                        listItems.remove(i);
+                        adapter.notifyDataSetChanged();
+                        break;
+                    } else {
+                        Toast.makeText(ListDonationMainActivity.this, "no items matched",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+
 
 //        if(mListV == null) {
 //            mListV = (ListView)findViewById(R.id.listitem);
