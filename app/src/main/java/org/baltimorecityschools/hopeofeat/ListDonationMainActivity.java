@@ -22,41 +22,29 @@ import java.util.ArrayList;
 
 public class ListDonationMainActivity extends AppCompatActivity {
 
-
     ArrayList<String> listItems;
     ArrayAdapter<String> adapter;
 
     ListView mListV;
-
     EditText yourFoodEt;
     Button addBTN;
     Button removeBTN;
+    Button locationN;
     String items;
-
-//    Button seeLocationDBTN;
-//    Button listPlacesBTN;
-
-//    Intent nextScreenMap;
-//    Intent nextScreenListPlaces;
-
-//    ListView donationListView;
-//    String[] donations = {" ", " ", " "};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_donation_main);
         mListV = (ListView)findViewById(R.id.listitem);
+//        listV = (ListView)findViewById(R.id.listItem2);
         yourFoodEt = (EditText)findViewById(R.id.yourF);
         addBTN = (Button)findViewById(R.id.addB);
         removeBTN = (Button)findViewById(R.id.removeB);
+        locationN = (Button)findViewById(R.id.LocationNBTN);
 
         listItems = new ArrayList<String>();
 
-//        listItems.add("Oranges");
-//        listItems.add("Rice");
-//        listItems.add("Milk");
-//        listItems.add("Coffe");
         adapter = new ArrayAdapter<String>(this, R.layout.activity_list_view, R.id.textView, listItems);
         mListV.setAdapter(adapter);
 
@@ -80,15 +68,14 @@ public class ListDonationMainActivity extends AppCompatActivity {
                         listItems.remove(i);
                         adapter.notifyDataSetChanged();
                         break;
-                    } else {
-                        Toast.makeText(ListDonationMainActivity.this, "no items matched",
-                                Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
 
+    }
 
+}
 
 
 
@@ -106,7 +93,7 @@ public class ListDonationMainActivity extends AppCompatActivity {
 //                listItems);
 //        setListAdapter(adapter);
 
-    }
+
 //    protected ListView getListView() {
 //        if (mListV == null) {
 //            mListV = (ListView) findViewById(R.id.listitem);
@@ -125,7 +112,7 @@ public class ListDonationMainActivity extends AppCompatActivity {
 //        }
 //    }
 
-}
+
 //        seeLocationDBTN = (Button)findViewById(R.id.SeeLoBTN);
 //        listPlacesBTN = (Button)findViewById(R.id.listPlacesBTN);
 

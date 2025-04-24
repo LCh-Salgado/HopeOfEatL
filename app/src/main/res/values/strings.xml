@@ -7,9 +7,8 @@
     <string name="list_ofdonation">Make Your List Of Donation.</string>
     <string name="enter_list">Add</string>
     <string name="remove_list">Remove</string>
-
+    <string name="location_near">Location nearme</string>
     <string name="see_location">See location to donate</string>
-    <!--    <string name="list_places">List Of Places</string>-->
     <string name="introduction_welcome">Welcome, this is an app donation where you can put your list of food
     and find a place to donate to help people in poor condition who don\'t have any kind of food to
     eat, this would help them :)</string>

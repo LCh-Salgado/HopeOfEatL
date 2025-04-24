@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:background="@drawable/background_image"
     android:orientation="vertical">
 
     <TextView
@@ -43,11 +44,45 @@
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listitem"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200sp"
-        />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/listitem"
+            android:layout_width="match_parent"
+            android:layout_height="200sp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="250dp" />
+
+        <Button
+            android:id="@+id/LocationNBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location_near"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
+<!--    <ListView-->
+<!--        android:id="@+id/listItem2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200sp"-->
+<!--        />-->
 
 <!--    <Space-->
 <!--        android:layout_width="0dp"-->
@@ -73,4 +108,3 @@
 
 
 
-</LinearLayout>
