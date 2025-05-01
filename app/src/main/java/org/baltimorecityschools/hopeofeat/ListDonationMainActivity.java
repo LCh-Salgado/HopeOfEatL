@@ -31,13 +31,14 @@ public class ListDonationMainActivity extends AppCompatActivity {
     Button removeBTN;
     Button locationN;
     String items;
+    Intent locationInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_donation_main);
         mListV = (ListView)findViewById(R.id.listitem);
-//        listV = (ListView)findViewById(R.id.listItem2);
+//       listV = (ListView)findViewById(R.id.listItem2);
         yourFoodEt = (EditText)findViewById(R.id.yourF);
         addBTN = (Button)findViewById(R.id.addB);
         removeBTN = (Button)findViewById(R.id.removeB);
@@ -70,6 +71,13 @@ public class ListDonationMainActivity extends AppCompatActivity {
                         break;
                     }
                 }
+            }
+        });
+        locationN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                locationInt = new Intent(ListDonationMainActivity.this, Gmail.class);
+                startActivity(locationInt);
             }
         });
 
