@@ -1,7 +1,9 @@
 package org.baltimorecityschools.hopeofeat;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,6 +34,7 @@ public class ListDonationMainActivity extends AppCompatActivity {
     Button locationN;
     String items;
     Intent locationInt;
+    public static final String ADDRESS ="geo:40.6969824,-74.2913202";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,11 +79,19 @@ public class ListDonationMainActivity extends AppCompatActivity {
         locationN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                locationInt = new Intent(ListDonationMainActivity.this, Gmail.class);
-                startActivity(locationInt);
+                showMap(Uri.parse(ADDRESS));
             }
         });
 
+    }
+    public void showMap(Uri geoLocation) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        Log.d("Mess", "Inside showmap");
+        intent.setData(geoLocation);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+            Log.d("View", "Inside resolveActivity");
+        }
     }
 
 }
