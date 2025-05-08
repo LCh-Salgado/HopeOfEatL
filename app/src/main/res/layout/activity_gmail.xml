@@ -8,6 +8,13 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gmail to send the information to donate."
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
 
 
 

@@ -33,7 +33,9 @@ public class ListDonationMainActivity extends AppCompatActivity {
     Button removeBTN;
     Button locationN;
     String items;
+
     Intent locationInt;
+
     public static final String ADDRESS ="geo:40.6969824,-74.2913202";
 
     @Override
@@ -83,6 +85,7 @@ public class ListDonationMainActivity extends AppCompatActivity {
             }
         });
 
+
     }
     public void showMap(Uri geoLocation) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -92,7 +95,9 @@ public class ListDonationMainActivity extends AppCompatActivity {
             startActivity(intent);
             Log.d("View", "Inside resolveActivity");
         }
+
     }
+
 
 }
 
