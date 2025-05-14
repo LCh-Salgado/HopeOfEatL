@@ -13,5 +13,7 @@
     and find a place to donate to help people in poor condition who don\'t have any kind of food to
     eat, this would help them :)</string>
     <string name="your_list">YourList</string>
+    <string name="email_subject">email_subj</string>
+    <string name="personal_email">personal_em</string>
 
 </resources>

@@ -1,6 +1,8 @@
 package org.baltimorecityschools.hopeofeat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class ListDonationMainActivity extends AppCompatActivity {
@@ -36,7 +40,7 @@ public class ListDonationMainActivity extends AppCompatActivity {
 
     Intent locationInt;
 
-    public static final String ADDRESS ="geo:40.6969824,-74.2913202";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,22 +85,30 @@ public class ListDonationMainActivity extends AppCompatActivity {
         locationN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showMap(Uri.parse(ADDRESS));
+            locationInt = new Intent(ListDonationMainActivity.this, NearbyMainActivity.class);
+            startActivity(locationInt);
             }
         });
+        SharedPreferences preferences = getSharedPreferences("my_preference", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        List<String> foodItems = new ArrayList<>();
+        foodItems.add("Pizza");
+        foodItems.add("Burger");
+// Convert list to a string to save in preferences
+        String foodListString = String.join(",", foodItems);
+        editor.putString("food_list", foodListString);
+        editor.apply();
 
-
-    }
-    public void showMap(Uri geoLocation) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        Log.d("Mess", "Inside showmap");
-        intent.setData(geoLocation);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-            Log.d("View", "Inside resolveActivity");
+// Retrieve data
+        String foodListStringRetrieved = preferences.getString("food_list", "");
+        List<String> retrievedFoodItems = new ArrayList<>();
+        if (!foodListStringRetrieved.isEmpty()) {
+            retrievedFoodItems.addAll(Arrays.asList(foodListStringRetrieved.split(",")));
         }
 
+
     }
+
 
 
 }
